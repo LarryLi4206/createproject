@@ -1,0 +1,75 @@
+******
+遇到PIP指令無法使用,進入setting->專案名稱->第一個Project Interpreter檢查使否有套件
+安裝套件
+pip install django
+建立專案
+django-admin startproject 專案名稱(基礎位置,專案內容以這個為主要起始路徑)
+****建立專案後確定路徑有沒有進入專案名稱內(cd 專案名;dir 確認manage.py的建立)
+建立APP(application)--可以多個
+python manage.py startapp app名稱
+
+建立資料夾(templates--網頁前端,static--圖片等等靜態資料)
+
+環境設定
+setting.py
+1.第26行 DEBUG = True 開啟除錯模式(完成改False)
+加入新增的應用程式名稱(INSTALLED_APPS串列內加入'page01')
+2.加入網址
+3.加入資料夾名稱(如:db,圖片檔等等)如果有建立
+建立資料庫後記得整合,指令如下:
+python manage.py migrate
+python manage.py makemigrations
+**************重點***********************
+連接MySQL出現版本問題
+D:\python\Web\DjangoWebProject\venv\Lib\site-packages\django\db\backends\mysql\base.py
+註解如下兩行
+version = Database.version_info
+#if version < (1, 4, 0):
+#    raise ImproperlyConfigured('mysqlclient 1.4.0 or newer is required; you have %s.' % Database.__version__)
+
+*******
+1.建立專案名稱createproject
+2.進入專案並設定需要的環境等等( cd createproject)
+3.dir指令確定建立成功(確認manage.py的建立)
+4.建立app(app名稱:projectPage01)--以此名稱加入settting.py內
+5.建立基本使用資料夾--(templates--網頁前端,static--圖片等等靜態資料)
+指令
+md templates
+md static
+6.setting.py註冊靜態資料夾位置及資料庫設定等等
+設定1:
+第33行(INSTALLED_APPS)內註冊建立的APP name
+設定2:
+import os 取得路徑
+第55行(TEMPLATES)內註冊前端templates資料夾位置
+第58行:'DIRS': [os.path.join(BASE_DIR , 'templates')],
+設定3:
+建立語言,時區
+第107行
+預設:
+LANGUAGE_CODE = 'en-us'
+TIME_ZONE = 'UTC'
+改中文
+LANGUAGE_CODE = 'zh-hant'
+TIME_ZONE = 'Asia/Taipei'
+設定4:
+靜態資料夾設定:
+STATIC_URL = '/static/'
+#加入
+STATICFILES_DIRS=[
+    os.path.join(BASE_DIR,'static')
+]
+
+7.執行server確認配置成功
+python manage.py runserver 127.0.0.1:8000
+1.建立html驗證
+配置1:urls.py驗證讀取,
+import views.py用來指引網址對應的方法顯示該方發設定的網頁名稱
+
+配置2:views.py導入基本使用套件
+建立方法指定顯示網頁名稱或指定值
+
+
+建立圖片驗證
+
+

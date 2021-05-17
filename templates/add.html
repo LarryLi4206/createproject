@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增資料</title>
+</head>
+<script language='javascript'></script>
+<body>
+<p>add</p>
+<script>
+document.write(window.location.href)
+</script>
+
+<!-- action 傳值到某網址 由urls.py指定哪歌function接收-->
+<!-- name給後端控制 id給前端(JS)控制-->
+<form id="id_db_connect" name="name_db_connect" method="get" action="/restadd/">
+    姓名:<input type="text" name="name" id='id_name'><br>
+    郵遞區號:<input name="num_area"><br>
+    聯絡地址:<input name="address"><br>
+    聯絡電話:<input name="tel1"><br>
+    手機或傳真:<input name="tel2"><br>
+    備註:<input name="note"><br>
+    <button type="submit" value="send" onclick="checkdata()">send</button>
+</form>
+<p id='checkname'></p>
+
+<script>
+    function checkdata(){  
+        var checkname=document.getElementById('id_name').value;
+        document.getElementById('ckeckname').innerHTML=checkname;
+        document.write(checkname)
+    }
+    </script>
+
+</body>
+</html>

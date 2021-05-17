@@ -1,0 +1,2 @@
+# TestDjangoConnectMySQL
+ ProjectNotCompleted

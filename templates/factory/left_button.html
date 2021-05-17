@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script language="JavaScript">
+function ChangePageAdd(page_add){
+    //window.location=page_add;
+    location.href=page_add
+}
+function ChangePageUpdate(page_update){
+    window.location.href=page_update;
+}
+function ChangePageSearch(page_search){
+    window.location.href=page_search;
+}
+</script>
+<p>選擇功能</p><br>
+
+<input type="button" value="全部資料" onclick="ChangePageSearch('search')"><br>
+<input type="button" value="新增資料" onclick="ChangePageAdd('add')"><br>
+<input type="button" value="更新資料" onclick="ChangePageUpdate('update')"><br>
+
+<script>
+document.write(window.location.href)
+</script>
+<br>
+<br>
+<br>
+<br>
+
+<input type="button" value="全部資料" onclick="javascript:location.href='search'"><br>
+<input type="button" value="新增資料" onclick="ChangePageAdd('add')"><br>
+<input type="button" value="更新資料" onclick="ChangePageUpdate('update')"><br>
+
+
+<body>
+
+</body>
+</html>
